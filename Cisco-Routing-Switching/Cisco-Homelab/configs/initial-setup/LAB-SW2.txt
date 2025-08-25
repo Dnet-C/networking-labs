@@ -1,0 +1,210 @@
+LAB-SW2#sh run
+Building configuration...
+
+Current configuration : 4382 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname LAB-SW2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+!
+no aaa new-model
+system mtu routing 1998
+ip routing
+ip dhcp excluded-address 10.10.10.1 10.10.10.10
+ip dhcp excluded-address 10.10.20.1 10.10.20.10
+!
+ip dhcp pool VLAN10
+   network 10.10.10.0 255.255.255.0
+   default-router 10.10.10.1
+   dns-server 8.8.8.8
+!
+ip dhcp pool VLAN20
+   network 10.10.20.0 255.255.255.0
+   default-router 10.10.20.1
+   dns-server 8.8.8.8
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3483133440
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3483133440
+ revocation-check none
+ rsakeypair TP-self-signed-3483133440
+!
+!
+crypto pki certificate chain TP-self-signed-3483133440
+ certificate self-signed 01
+  30820240 308201A9 A0030201 02020101 300D0609 2A864886 F70D0101 04050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33343833 31333334 3430301E 170D3933 30333031 30303033
+  30335A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 34383331
+  33333434 3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100DD86 89E56724 0F7ACF32 829C011B 4D3A44A2 CBFE0AF2 E3B9885B B9AA3557
+  479E1958 445253F4 3003D069 59012C97 2D252799 38F26C25 3E78367F 71D37676
+  39EACBE4 AC8F58DD 819D6031 DF547E13 0EF7CB7A AC81F013 F3DF3D87 8DDE91C8
+  BE153359 1EA3F44F 530D8FD9 40ACA92A A93DFE49 9FA8C5FA EBC50F94 E848B00B
+  61EB0203 010001A3 68306630 0F060355 1D130101 FF040530 030101FF 30130603
+  551D1104 0C300A82 084C4142 2D535732 2E301F06 03551D23 04183016 80144795
+  F5432E24 8C895762 A7278852 C1A3F412 4D84301D 0603551D 0E041604 144795F5
+  432E248C 895762A7 278852C1 A3F4124D 84300D06 092A8648 86F70D01 01040500
+  03818100 1E8EF29B D70256AD D7A37FDF A300AA5F 8D4FB413 68048B5E F920A738
+  FB1040E4 1DC90460 76E2F0EB 7E382F37 65A73D12 D64AB241 2EA4FA5C 1CC06C90
+  9438F914 374A3293 30559F66 04D09B74 D7E6C19F 7F34177E 0885FF12 480C1474
+  66BBFA80 FFEF1AB7 1312DA3C 3FB39991 D2F91F25 33091D52 5B2B956F 23B699F3 B2BBB646
+  quit
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+interface GigabitEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+interface GigabitEthernet0/3
+!
+interface GigabitEthernet0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/5
+!
+interface GigabitEthernet0/6
+!
+interface GigabitEthernet0/7
+!
+interface GigabitEthernet0/8
+!
+interface GigabitEthernet0/9
+!
+interface GigabitEthernet0/10
+!
+interface GigabitEthernet0/11
+!
+interface GigabitEthernet0/12
+!
+interface GigabitEthernet0/13
+!
+interface GigabitEthernet0/14
+!
+interface GigabitEthernet0/15
+!
+interface GigabitEthernet0/16
+!
+interface GigabitEthernet0/17
+!
+interface GigabitEthernet0/18
+!
+interface GigabitEthernet0/19
+!
+interface GigabitEthernet0/20
+!
+interface GigabitEthernet0/21
+!
+interface GigabitEthernet0/22
+!
+interface GigabitEthernet0/23
+!
+interface GigabitEthernet0/24
+!
+interface GigabitEthernet0/25
+!
+interface GigabitEthernet0/26
+!
+interface GigabitEthernet0/27
+!
+interface GigabitEthernet0/28
+!
+interface GigabitEthernet0/29
+!
+interface GigabitEthernet0/30
+!
+interface GigabitEthernet0/31
+!
+interface GigabitEthernet0/32
+!
+interface GigabitEthernet0/33
+!
+interface GigabitEthernet0/34
+!
+interface GigabitEthernet0/35
+!
+interface GigabitEthernet0/36
+!
+interface GigabitEthernet0/37
+!
+interface GigabitEthernet0/38
+!
+interface GigabitEthernet0/39
+!
+interface GigabitEthernet0/40
+!
+interface GigabitEthernet0/41
+!
+interface GigabitEthernet0/42
+!
+interface GigabitEthernet0/43
+!
+interface GigabitEthernet0/44
+!
+interface GigabitEthernet0/45
+!
+interface GigabitEthernet0/46
+!
+interface GigabitEthernet0/47
+!
+interface GigabitEthernet0/48
+!
+interface GigabitEthernet0/49
+!
+interface GigabitEthernet0/50
+!
+interface GigabitEthernet0/51
+!
+interface GigabitEthernet0/52
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ ip address 10.10.10.1 255.255.255.0
+!
+interface Vlan20
+ ip address 10.10.20.1 255.255.255.0
+!
+ip classless
+ip http server
+ip http secure-server
+!
+!
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+end

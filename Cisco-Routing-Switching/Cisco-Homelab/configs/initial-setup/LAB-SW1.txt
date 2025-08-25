@@ -1,0 +1,179 @@
+LAB-SW1#sh run
+Building configuration...
+
+Current configuration : 3775 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname LAB-SW1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-714385152
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-714385152
+ revocation-check none
+ rsakeypair TP-self-signed-714385152
+!
+!
+crypto pki certificate chain TP-self-signed-714385152
+ certificate self-signed 01
+  3082023E 308201A7 A0030201 02020101 300D0609 2A864886 F70D0101 04050030
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 37313433 38353135 32301E17 0D393330 33303130 30303134
+  315A170D 32303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3731 34333835
+  31353230 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100
+  B25DFBE8 6214482B 9753AB42 A7D0627D 97D998A5 17AAC33F 03C55FEE C2C06D09
+  07ED6883 8CACC078 5FBA874C 3ECCBBD3 40CBAB0D 6E22CA46 6A051469 42D3F433
+  BB16C2DA 1C260A9A B1FFC1B3 7ED9E85D E4A21F45 D5696E4D 34FD2E3B 961B5E24
+  25A93228 9C3F1722 BF803148 5778C1AB B4400815 C417A375 A8D54F53 3A0ADD8B
+  02030100 01A36830 66300F06 03551D13 0101FF04 05300301 01FF3013 0603551D
+  11040C30 0A82084C 41422D53 57312E30 1F060355 1D230418 30168014 D258217A
+  3B678143 953A37AA 3CAA4EF6 71C23CF0 301D0603 551D0E04 160414D2 58217A3B
+  67814395 3A37AA3C AA4EF671 C23CF030 0D06092A 864886F7 0D010104 05000381
+  81008F15 27EDFB3A BEEA5699 7756BA74 B1695EB6 BE1F9B18 11548179 E35FD1C7
+  AF6B415E 1E835EC2 69188A76 DB86F604 4AAA9C6A 949000A1 BE8A504C 43CFBB8A
+  84E90FD7 C58E4AD2 B18A2EAC FE38F394 3F38BF05 5F85EF62 DFCFE4B6 0A61FC3C
+  779483A4 01C12785 1FFA4ABE E8DC6A54 CC6903AC 1E5F8CAA 5B3659ED 307C7BCB 2C8F
+  quit
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+interface FastEthernet0
+ no ip address
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+interface GigabitEthernet0/3
+!
+interface GigabitEthernet0/4
+ switchport mode trunk
+!
+interface GigabitEthernet0/5
+!
+interface GigabitEthernet0/6
+!
+interface GigabitEthernet0/7
+!
+interface GigabitEthernet0/8
+!
+interface GigabitEthernet0/9
+!
+interface GigabitEthernet0/10
+!
+interface GigabitEthernet0/11
+!
+interface GigabitEthernet0/12
+!
+interface GigabitEthernet0/13
+!
+interface GigabitEthernet0/14
+!
+interface GigabitEthernet0/15
+!
+interface GigabitEthernet0/16
+!
+interface GigabitEthernet0/17
+!
+interface GigabitEthernet0/18
+!
+interface GigabitEthernet0/19
+!
+interface GigabitEthernet0/20
+!
+interface GigabitEthernet0/21
+!
+interface GigabitEthernet0/22
+!
+interface GigabitEthernet0/23
+!
+interface GigabitEthernet0/24
+!
+interface GigabitEthernet0/25
+!
+interface GigabitEthernet0/26
+!
+interface GigabitEthernet0/27
+!
+interface GigabitEthernet0/28
+!
+interface GigabitEthernet0/29
+!
+interface GigabitEthernet0/30
+!
+interface GigabitEthernet0/31
+!
+interface GigabitEthernet0/32
+!
+interface GigabitEthernet0/33
+!
+interface GigabitEthernet0/34
+!
+interface GigabitEthernet0/35
+!
+interface GigabitEthernet0/36
+!
+interface GigabitEthernet0/37
+!
+interface GigabitEthernet0/38
+!
+interface GigabitEthernet0/39
+!
+interface GigabitEthernet0/40
+!
+interface GigabitEthernet0/41
+!
+interface GigabitEthernet0/42
+!
+interface GigabitEthernet0/43
+!
+interface GigabitEthernet0/44
+!
+interface GigabitEthernet0/45
+!
+interface GigabitEthernet0/46
+!
+interface GigabitEthernet0/47
+!
+interface GigabitEthernet0/48
+!
+interface GigabitEthernet0/49
+!
+interface GigabitEthernet0/50
+!
+interface Vlan1
+ no ip address
+!
+ip http server
+ip http secure-server
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+end
