@@ -1,7 +1,7 @@
-LAB-R1#sh run
+LAB-R1#show run
 Building configuration...
 
-Current configuration : 1470 bytes
+Current configuration : 1504 bytes
 !
 version 15.1
 service timestamps debug datetime msec
@@ -70,10 +70,11 @@ interface GigabitEthernet0/2.2
 router ospf 1
  router-id 1.1.1.1
  log-adjacency-changes
+ network 1.1.1.1 0.0.0.0 area 0
  network 10.0.0.0 0.0.0.3 area 0
  network 10.0.0.4 0.0.0.3 area 0
- network 10.10.10.0 0.0.0.255 area 0
- network 10.10.20.0 0.0.0.255 area 0
+ network 10.10.10.0 0.0.0.255 area 10
+ network 10.10.20.0 0.0.0.255 area 10
 !
 ip forward-protocol nd
 !

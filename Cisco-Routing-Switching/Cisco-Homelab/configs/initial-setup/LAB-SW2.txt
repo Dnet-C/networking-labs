@@ -1,7 +1,8 @@
 LAB-SW2#sh run
 Building configuration...
 
-Current configuration : 4382 bytes
+*Mar  1 05:21:26.122: %SYS-5-CONFIG_I: Configured from console by console
+Current configuration : 4976 bytes
 !
 version 12.2
 no service pad
@@ -25,13 +26,13 @@ ip dhcp excluded-address 10.10.20.1 10.10.20.10
 !
 ip dhcp pool VLAN10
    network 10.10.10.0 255.255.255.0
-   default-router 10.10.10.1
    dns-server 8.8.8.8
+   default-router 10.10.10.10
 !
 ip dhcp pool VLAN20
    network 10.10.20.0 255.255.255.0
-   default-router 10.10.20.1
    dns-server 8.8.8.8
+   default-router 10.10.20.10
 !
 !
 !
@@ -98,44 +99,64 @@ interface GigabitEthernet0/8
 interface GigabitEthernet0/9
 !
 interface GigabitEthernet0/10
+ switchport access vlan 10
 !
 interface GigabitEthernet0/11
+ switchport access vlan 10
 !
 interface GigabitEthernet0/12
+ switchport access vlan 10
 !
 interface GigabitEthernet0/13
+ switchport access vlan 10
 !
 interface GigabitEthernet0/14
+ switchport access vlan 10
 !
 interface GigabitEthernet0/15
+ switchport access vlan 10
 !
 interface GigabitEthernet0/16
+ switchport access vlan 10
 !
 interface GigabitEthernet0/17
+ switchport access vlan 10
 !
 interface GigabitEthernet0/18
+ switchport access vlan 10
 !
 interface GigabitEthernet0/19
+ switchport access vlan 10
 !
 interface GigabitEthernet0/20
+ switchport access vlan 20
 !
 interface GigabitEthernet0/21
+ switchport access vlan 20
 !
 interface GigabitEthernet0/22
+ switchport access vlan 20
 !
 interface GigabitEthernet0/23
+ switchport access vlan 20
 !
 interface GigabitEthernet0/24
+ switchport access vlan 20
 !
 interface GigabitEthernet0/25
+ switchport access vlan 20
 !
 interface GigabitEthernet0/26
+ switchport access vlan 20
 !
 interface GigabitEthernet0/27
+ switchport access vlan 20
 !
 interface GigabitEthernet0/28
+ switchport access vlan 20
 !
 interface GigabitEthernet0/29
+ switchport access vlan 20
 !
 interface GigabitEthernet0/30
 !
@@ -189,9 +210,11 @@ interface Vlan1
 !
 interface Vlan10
  ip address 10.10.10.1 255.255.255.0
+ standby 1 ip 10.10.10.10
 !
 interface Vlan20
  ip address 10.10.20.1 255.255.255.0
+ standby 1 ip 10.10.20.10
 !
 ip classless
 ip http server

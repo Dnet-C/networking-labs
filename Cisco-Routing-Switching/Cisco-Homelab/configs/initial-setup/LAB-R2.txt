@@ -1,7 +1,9 @@
-LAB-R2#sh run
+LAB-R2#show run
 Building configuration...
 
-Current configuration : 1349 bytes
+Current configuration : 1413 bytes
+!
+! Last configuration change at 16:59:21 UTC Tue Aug 26 2025
 !
 version 15.1
 service timestamps debug datetime msec
@@ -38,7 +40,7 @@ license udi pid CISCO2911/K9 sn FTX1732AK3X
 !
 !
 !
-interface Loopback1
+interface Loopback0
  ip address 2.2.2.2 255.255.255.255
 !
 interface GigabitEthernet0/0
@@ -71,8 +73,8 @@ router ospf 1
  network 2.2.2.2 0.0.0.0 area 0
  network 10.0.0.4 0.0.0.3 area 0
  network 10.0.2.0 0.0.0.255 area 0
- network 10.10.10.0 0.0.0.255 area 0
- network 10.10.20.0 0.0.0.255 area 0
+ network 10.10.10.0 0.0.0.255 area 20
+ network 10.10.20.0 0.0.0.255 area 20
 !
 ip forward-protocol nd
 !

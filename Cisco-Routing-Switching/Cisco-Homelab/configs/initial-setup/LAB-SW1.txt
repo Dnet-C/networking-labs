@@ -1,7 +1,7 @@
 LAB-SW1#sh run
 Building configuration...
 
-Current configuration : 3775 bytes
+Current configuration : 4315 bytes
 !
 version 12.2
 no service pad
@@ -83,44 +83,64 @@ interface GigabitEthernet0/8
 interface GigabitEthernet0/9
 !
 interface GigabitEthernet0/10
+ switchport access vlan 10
 !
 interface GigabitEthernet0/11
+ switchport access vlan 10
 !
 interface GigabitEthernet0/12
+ switchport access vlan 10
 !
 interface GigabitEthernet0/13
+ switchport access vlan 10
 !
 interface GigabitEthernet0/14
+ switchport access vlan 10
 !
 interface GigabitEthernet0/15
+ switchport access vlan 10
 !
 interface GigabitEthernet0/16
+ switchport access vlan 10
 !
 interface GigabitEthernet0/17
+ switchport access vlan 10
 !
 interface GigabitEthernet0/18
+ switchport access vlan 10
 !
 interface GigabitEthernet0/19
+ switchport access vlan 10
 !
 interface GigabitEthernet0/20
+ switchport access vlan 20
 !
 interface GigabitEthernet0/21
+ switchport access vlan 20
 !
 interface GigabitEthernet0/22
+ switchport access vlan 20
 !
 interface GigabitEthernet0/23
+ switchport access vlan 20
 !
 interface GigabitEthernet0/24
+ switchport access vlan 20
 !
 interface GigabitEthernet0/25
+ switchport access vlan 20
 !
 interface GigabitEthernet0/26
+ switchport access vlan 20
 !
 interface GigabitEthernet0/27
+ switchport access vlan 20
 !
 interface GigabitEthernet0/28
+ switchport access vlan 20
 !
 interface GigabitEthernet0/29
+ switchport access vlan 20
 !
 interface GigabitEthernet0/30
 !
