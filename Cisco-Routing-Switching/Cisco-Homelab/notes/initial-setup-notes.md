@@ -7,16 +7,17 @@ and to test my proficiency in building a network **from scratch**.
 I used my laptop to console into and configure each of the following devices:
 
 - TP-Link AX6600 Wi-Fi 6 Router  
-- Cisco ASA 8520 Firewall  
+- Cisco ASA 5520 Firewall  
 - Two Cisco 2911 ISR Routers  
 - Cisco Catalyst 3650 (Layer 3 Switch)  
 - Cisco Catalyst 2960 (Layer 2 Switch)  
 
 ---
 
-## Cisco ASA 8520 – Initial Config
+## Cisco Lab – Initial Config
 
 ```cisco
+Cisco ASA 5520
 hostname LAB-ASA
 ip domain-name lab.local
 username admin privilege 15 secret ***********
@@ -46,16 +47,14 @@ aaa authentication telnet console LOCAL
 ⚠️ Issue: Telnet failed even though allowed.
 💡 Best practice: Removed Telnet for security.
 
-### Cisco ASA 8520
+Cisco ASA 5520
 
-```cisco
 no telnet 192.168.0.0 255.255.255.0 outside
 no aaa authentication telnet console LOCAL
 
 
-#### Cisco 2911 Router (R1
+Cisco 2911 Router (R1)
 
-```cisco
 hostname LAB-R1
 
 interface G0/0
@@ -89,9 +88,8 @@ router ospf 1
 
 ip route 0.0.0.0 0.0.0.0 10.0.0.1
 
-###### Cisco 2911 Router (R2)
+Cisco 2911 Router (R2)
 
-```cisco
 hostname LAB-R2
 
 interface G0/0
@@ -119,9 +117,8 @@ router ospf 1
 
 ip route 0.0.0.0 0.0.0.0 10.0.0.5
 
-####### Cisco catalyst 3650 - L3 Switch (SW2)
+Cisco catalyst 3650 - L3 Switch (SW2)
 
-```cisco
 hostname LAB-SW2
 ip routing
 
@@ -129,6 +126,7 @@ vtp domain lab
 vtp mode server
 
 vlan 10
+
  name Ubuntu
 vlan 20
  name CentOS
@@ -164,9 +162,8 @@ ip dhcp pool VLAN20
  default-router 10.10.20.1
  dns-server 8.8.8.8
 
-######## Cisco Catalyst 2960 - L2 Switch (SW1)
+Cisco Catalyst 2960 - L2 Switch (SW1)
 
-```cisco
 hostname LAB-SW1
 
 interface FastEthernet0/1
@@ -187,7 +184,7 @@ vtp domain lab
 vtp mode client
 
 
-# Testing & Validation
+Testing & Validation
 
 Connectivity Tests (ASA → Routers/Subinterfaces)
 
@@ -215,7 +212,7 @@ DHCP Tests
 Excluded addresses reserved for future HSRP high availability lab.
 
 
-## Key Takeaways
+Key Takeaways
 
 - Successfully brought all equipment online and verified connectivity.
 
